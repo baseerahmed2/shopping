@@ -8,14 +8,21 @@
 
 import React from 'react';
 import AppNavigatior from './src/navigation/AppNavigation';
+import { Provider  } from 'react-redux';
+import {configStore} from './src/store/configStore';
 
+const store = configStore()
 
 const App: () => Node = () => {
   
   return (
+<Provider store={store}>
+<AppNavigatior/>
 
-    <AppNavigatior/>
+</Provider>
 
   );
 };
+
+
 export default App;

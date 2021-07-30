@@ -1,14 +1,17 @@
 import {  createStore, combineReducers  } from 'redux';
-import {productReducer } from '../redux/reducers/product';
-import { cartReducer } from '../redux/reducers/cart';
+import shopReducer  from '../redux/reducers/shop';
+import  cartReducer  from '../redux/reducers/cart';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 export  const configStore = ()=>{
 
 const store = createStore(combineReducers({
-    product: productReducer,
+    shops: shopReducer,
     cart: cartReducer
-}));
+}), 
+composeWithDevTools()
+);
 
     return store 
 

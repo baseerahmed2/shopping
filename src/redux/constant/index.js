@@ -1,0 +1,1 @@
+export const  ADD_SHOPS = 'ADD_SHOPS';

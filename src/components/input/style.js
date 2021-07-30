@@ -7,8 +7,8 @@ container:{
     flex:1,
 },
 input:{
-    width:350,
-    height:45,
+    width:320,
+    height:40,
     backgroundColor:'#fff',
     borderRadius:40,
     color:'#000',
