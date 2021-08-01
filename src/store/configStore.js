@@ -10,7 +10,6 @@ const store = createStore(combineReducers({
     shops: shopReducer,
     cart: cartReducer
 }), 
-composeWithDevTools()
 );
 
     return store 

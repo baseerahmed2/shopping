@@ -5,11 +5,18 @@ import Item from '../../components/product/Item';
 import styles from './style';
 import commonStyle from '../../theme/style';
 import {product } from '../../utils/StaticContent'; 
+import Button from '../../components/button/index';
 
-const ProductHomeScreen = ({navigation}) => {
+
+const ProductHomeScreen = ({navigation, addToCart}) => {
+ const addItemToCart = (product) =>{
+    addToCart(product)
+ }
+
     return (
         <View style={[styles.container]}>
             <Header  title={'shop name'}  goback search  navigation={navigation} />
+             {/* <Button color={'red'} onButtonPress={()=>{}} title={'addtocart'}/> */}
             <View style={[styles.innerContainer]}>
             <Text style={[commonStyle.h2, {alignSelf:'flex-start', paddingTop:20, paddingHorizontal:20 } ]}>Category name</Text>
               
@@ -20,7 +27,7 @@ const ProductHomeScreen = ({navigation}) => {
               key={'1'}
                numColumns={2}
                data={product}
-               renderItem={({item})=> <Item {...item} navigation={navigation} />}
+               renderItem={({item})=> <Item {...item} addItemToCart={addItemToCart} navigation={navigation} />}
                keyExtractor={(id)=>id.toString()}
                showsVerticalScrollIndicator={false}
               /> 

@@ -1,11 +1,20 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import ProductHomeScreen from './ProductHomeScreen'
+import ProductHomeScreen from './ProductHomeScreen';
+import { connect } from 'react-redux';
+import { addToCart } from './../../redux/actions/cart';
 
 const index = (props) => {
     return (
-       <ProductHomeScreen {...prop}/>
+       <ProductHomeScreen {...props}/>
     )
 }
 
-export default index
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        addToCart: (product) => dispatch(addToCart(product))
+    }
+}
+
+
+
+export default connect(undefined, mapDispatchToProps) (index)

@@ -25,4 +25,5 @@ const App: () => Node = () => {
 };
 
 
+console.log('state--->', store.getState())
 export default App;

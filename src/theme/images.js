@@ -23,6 +23,7 @@ const CLOSE = require('../../assets/close.png');
 const GENDER = require('../../assets/gender.png');
 const PHONE = require('../../assets/phone.png');
 const ADDRESS1 = require('../../assets/address1.png');
+const EMPTY_CART = require('../../assets/icons8-empty-box-100.png')
 
 
 
@@ -66,5 +67,6 @@ export {
     CLOSE,
     GENDER,
     ADDRESS1,
-    PHONE
+    PHONE,
+    EMPTY_CART
 }

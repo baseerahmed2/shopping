@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import {  Text, View, ScrollView, FlatList,  } from 'react-native'
+import { View, FlatList,  } from 'react-native'
 import  Header  from '../../components/header/index';
 import Swiper from '../../components/swiper/index';
 import SearchInput from '../../components/input/SearchInput';
@@ -11,6 +11,7 @@ import styles from './style';
 import { shopList } from '../../utils/StaticContent';
 
 const HomeScreen = ({navigation, addShop, _shopsList}) => {
+
 
  const [search, setSearch] = useState('')
  const [active , setActive] = useState(false)

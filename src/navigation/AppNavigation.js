@@ -4,13 +4,13 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
 import { createAppContainer,  } from 'react-navigation';
 import { createStackNavigator ,TransitionPresets} from 'react-navigation-stack';
-import HomeScreen from './../screens/home/index';
+import HomeScreen from './../screens/home/Index';
 import {  HOME_IN_ACTIVE, HOME_ACTIVE, CART, ACCOUNT_ACTIVE, ACCOUNT_IN_ACTIVE } from '../theme/images';
 import commonStyle from '../theme/style';
 import ProductDetailScreen from './../screens/detail/ProductDetailScreen';
 import ShopCategoryScreen from '../screens/category/ShopCategoryScreen';
-import ProductHomeScreen from './../screens/productpage/ProductHomeScreen';
-import CartHomeScreen from './../screens/cart/CartHomeScreen';
+import ProductHomeScreen from './../screens/productpage/index';
+import CartHomeScreen from './../screens/cart/index';
 import AccountHomeScreen from '../screens/account/index'
 import LoginScreen from './../screens/login/index';
 import RegisterScreen from '../screens/register/index';
@@ -21,7 +21,7 @@ import SearchScreen from './../screens/search/SearchScreen';
 import ChangePaymentScreen from './../screens/payment/ChangePaymentScreen';
 import FavouriteScreen from './../screens/favorite/index';
 import SearchShopScreen from './../screens/searchshop/SearchScreen';
-
+import AddAddressScreen from './../screens/addAddress/AddAddressScreen';
 
 const HomeStack = createStackNavigator({
     Home:{screen: HomeScreen},
@@ -138,10 +138,11 @@ Register: {screen: RegisterScreen}
 const MainStack = createStackNavigator({
 Auth: AuthStack,
 App:BottomTabs,
-Search: {screen: SearchScreen}
+Search: {screen: SearchScreen},
+AddAddress: {screen: AddAddressScreen}
 }, 
 {
-    initialRouteName:'App',
+    initialRouteName:'AddAddress',
     headerMode:'none',
     defaultNavigationOptions: {
         ...TransitionPresets.SlideFromRightIOS,
