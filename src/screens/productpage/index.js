@@ -1,7 +1,8 @@
 import React from 'react'
 import ProductHomeScreen from './ProductHomeScreen';
 import { connect } from 'react-redux';
-import { addToCart } from './../../redux/actions/cart';
+import { addToCart, removeFromCart } from './../../redux/actions/cart';
+import { getAllProduct, IncreaseQuantity } from './../../redux/actions/product';
 
 const index = (props) => {
     return (
@@ -11,10 +12,22 @@ const index = (props) => {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-        addToCart: (product) => dispatch(addToCart(product))
+        getAllProduct: (product)=>dispatch(getAllProduct(product)),
+        IncreaseQuantity: (id)=>dispatch(IncreaseQuantity(id)),
+        addToCart: (product) => dispatch(addToCart(product)),
+        removeFromCart : (product) =>dispatch(removeFromCart(product)),
+
     }
 }
 
+const mapStateToProps =(store) =>{
+
+     return {
+        productList: store.product.productList[0],
+     }
+
+ }
 
 
-export default connect(undefined, mapDispatchToProps) (index)
+
+export default connect(mapStateToProps, mapDispatchToProps) (index)

@@ -73,7 +73,7 @@ Home: {
             return ( 
                 <View style={{ width:40, alignItems:'center',}}>
                   <Image source={ focused ? HOME_ACTIVE: HOME_IN_ACTIVE} style={{width:24, height:24 }}/>
-                  <Text style={[commonStyle.regularText, focused && {activeColor:'rgb(11,21,90)', fontWeight:'bold' },  {fontSize:10}]}>{'Home'}</Text>
+                  <Text style={[commonStyle.regularText, focused && {color:'rgb(11,21,90)', fontWeight:'bold' },  {fontSize:10}]}>{'Home'}</Text>
                 </View>
                
             )
@@ -104,7 +104,7 @@ Account: {
             return ( 
                 <View style={{ width:40, alignItems:'center',}}>
                 <Image source={ focused ? ACCOUNT_ACTIVE: ACCOUNT_IN_ACTIVE} style={{width:24, height:24, }}/>
-                <Text style={[commonStyle.regularText, focused && {activeColor:'rgb(11,21,90)', fontWeight:'bold' },  {fontSize:10}]}>{'Account'}</Text>
+                <Text style={[commonStyle.regularText, focused && {color:'rgb(11,21,90)', fontWeight:'bold' },  {fontSize:10}]}>{'Account'}</Text>
               </View>
                
             )
@@ -142,7 +142,7 @@ Search: {screen: SearchScreen},
 AddAddress: {screen: AddAddressScreen}
 }, 
 {
-    initialRouteName:'AddAddress',
+    initialRouteName:'Auth',
     headerMode:'none',
     defaultNavigationOptions: {
         ...TransitionPresets.SlideFromRightIOS,

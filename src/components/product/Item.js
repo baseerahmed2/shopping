@@ -5,16 +5,16 @@ import commonStyle from '../../theme/style';
 import { PLUS, MINUS } from '../../theme/images';
 import { addToCart } from './../../redux/actions/cart';
 
-const Item = ({name, description, image, price, discountedPrice, navigation, addItemToCart , id}) => {
+const Item = ({quantity,name, description, image, price, discountedPrice, navigation, addItemToCart ,removeItemFromCart,  id, subTotalCounter, IncreaseCartQuantity}) => {
    const [isCartSelected,setCart ] = useState(false);
    const [totalCartItem, setCartItem] = useState(0)
-
    const product = { name, price, image, id  } ;
 
 
  function selectCart(params) {
     setCart(true)
     addItemToCart(product)
+    IncreaseCartQuantity(id)
 }
 
 
@@ -45,10 +45,10 @@ function addToCart(params) {
                 <Image source={PLUS} style={{width:16, height:16}} />
            </TouchableOpacity>}
            { isCartSelected && <View style={[styles.cartSelectedView]}>
-              <TouchableOpacity activeOpacity={0.6} style={[styles.buttonStyle]} onPress={addToCart} >
+              <TouchableOpacity activeOpacity={0.6} style={[styles.buttonStyle]} onPress={()=>removeItemFromCart(product)} >
                   <Image source={MINUS} style={{ width:14, height:14,tintColor:'#fff', alignSelf:'center' }} />
               </TouchableOpacity>
-              <Text style={[styles.cart]}>{1}</Text>
+              <Text style={[styles.cart]}>{subTotalCounter}</Text>
               {/* plus */}
               <TouchableOpacity activeOpacity={0.6} style={[styles.buttonStyle1]} onPress={()=>addItemToCart(product)} >
                   <Image source={PLUS} style={{ width:14, height:14,tintColor:'#fff', alignSelf:'center' }} />

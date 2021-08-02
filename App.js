@@ -10,7 +10,12 @@ import React from 'react';
 import AppNavigatior from './src/navigation/AppNavigation';
 import { Provider  } from 'react-redux';
 import {configStore} from './src/store/configStore';
+import { LogBox } from 'react-native';
 
+  LogBox.ignoreLogs(['Warning: ...']); //Hide warnings
+  
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
 const store = configStore()
 
 const App: () => Node = () => {

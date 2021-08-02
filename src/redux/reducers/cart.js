@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log('remove from cart action paylaod', action.payload);
+  console.log('cart reducer');
   switch (action.type) {
     case ADD_TO_CART:
       const addedProduct = action.payload;
