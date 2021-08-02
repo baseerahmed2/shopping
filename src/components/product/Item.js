@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {  Text, View, Image, TouchableOpacity } from 'react-native'
+import {  Text, View, Image, TouchableOpacity, ToastAndroid } from 'react-native'
 import styles from './style';
 import commonStyle from '../../theme/style';
 import { PLUS, MINUS } from '../../theme/images';
@@ -7,14 +7,15 @@ import { addToCart } from './../../redux/actions/cart';
 
 const Item = ({quantity,name, description, image, price, discountedPrice, navigation, addItemToCart ,removeItemFromCart,  id, subTotalCounter, IncreaseCartQuantity}) => {
    const [isCartSelected,setCart ] = useState(false);
-   const [totalCartItem, setCartItem] = useState(0)
+   const [totalCartItem, setCartItem] = useState(0);
    const product = { name, price, image, id  } ;
 
 
  function selectCart(params) {
-    setCart(true)
+    // setCart(true)
     addItemToCart(product)
-    IncreaseCartQuantity(id)
+    ToastAndroid.show(`${name} added to cart`, ToastAndroid.SHORT)
+    // IncreaseCartQuantity(id)
 }
 
 

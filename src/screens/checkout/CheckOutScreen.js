@@ -8,7 +8,8 @@ import HorizontalLine from '../../components/horizontalLine/index';
 import commonStyle from '../../theme/style';
 import Button from '../../components/button/index';
 
-const CheckOutScreen = ({navigation}) => {
+const CheckOutScreen = ({navigation, cartItems,totalAmount, subTotalCounter}) => {
+    console.log('tocheckout', cartItems)
     const [checkBox, setCheckBox] = useState('')
     const [textArea, setTextArea] = useState('');
     return (
@@ -72,35 +73,21 @@ const CheckOutScreen = ({navigation}) => {
                     <Text style={[style.h2]}>Quantity</Text>
                     <Text style={[style.h2]}>Amount</Text>
                     </View>
-                    <View style={[styles.itemView]}>
-               <Text style={[style.h3,{width:'45%',  paddingLeft:15}]}>that might appear on the page you’re looking for. For example,"</Text>
-               <Text style={[style.h3,{width:'45%', left:34, }]}>3</Text>
-               <Text style={[style.h3,{width:'45%', }]}>Rs.903</Text>
+                  {cartItems.map((item)=>{
+                      return (
+<>
+<View style={[styles.itemView]}>
+               <Text style={[style.h3,{width:'45%',  paddingLeft:15}]}>{item.name}</Text>
+               <Text style={[style.h3,{width:'45%', left:34, }]}>{item.quantity}</Text>
+               <Text style={[style.h3,{width:'45%', }]}>{item.sum}</Text>
                     </View>
                <HorizontalLine opacity />
+               </>
 
-                    <View style={[styles.itemView]}>
-               <Text style={[style.h3,{width:'45%',  paddingLeft:15}]}>that might appear on the page you’re looking for. For example,"</Text>
-               <Text style={[style.h3,{width:'45%', left:34, }]}>3</Text>
-               <Text style={[style.h3,{width:'45%', }]}>Rs.903</Text>
+                      )
+                  })}
 
-                    </View> 
-               <HorizontalLine opacity />
-
-                       <View style={[styles.itemView]}>
-               <Text style={[style.h3,{width:'45%',  paddingLeft:15}]}>that might appear on the page you’re looking for. For example,"</Text>
-               <Text style={[style.h3,{width:'45%', left:34, }]}>3</Text>
-               <Text style={[style.h3,{width:'45%', }]}>Rs.903</Text>
-
-                    </View>
-               <HorizontalLine opacity />
-
-                        <View style={[styles.itemView]}>
-               <Text style={[style.h3,{width:'45%',  paddingLeft:15}]}>that might appear on the page you’re looking for. For example,"</Text>
-               <Text style={[style.h3,{width:'45%', left:34, }]}>3</Text>
-               <Text style={[style.h3,{width:'45%', }]}>Rs.903</Text>
-
-                    </View>
+                    
 
                 </View>
                 {/* cart detail */}
@@ -109,22 +96,22 @@ const CheckOutScreen = ({navigation}) => {
                 </View>
                 <View style={[styles.cartDetail]}>
                     <View style={[styles.cartItemStyle]}>
-                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Subtotal (2):'}</Text>
-                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Rs.800'}</Text>
+                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{`Subtotal ${subTotalCounter}:`}</Text>
+                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{`Rs.${totalAmount}`}</Text>
                     </View>
                     <View style={[styles.cartItemStyle]}>
                     <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Discount :'}</Text>
-                    <Text style={[commonStyle.h3,styles.letterSpacingStyle]}>{'Rs.800'}</Text>
+                    <Text style={[commonStyle.h3,styles.letterSpacingStyle]}>{'Rs.0'}</Text>
                     </View>
                     <View style={[styles.cartItemStyle]}>
                     <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Packing / Delivery fee :'}</Text>
-                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Rs.800'}</Text>
+                    <Text style={[commonStyle.h3, styles.letterSpacingStyle]}>{'Rs.0'}</Text>
                     </View>
                 </View>
                 <HorizontalLine />
                 <View style={[styles.cartItemStyle, {padding:16}]}>
                     <Text style={[commonStyle.h3,{fontWeight:'bold', letterSpacing:2}]}>{'Total :'}</Text>
-                    <Text style={[commonStyle.h3, {fontWeight:'bold', letterSpacing:2}]}>{'Rs.1000/-'}</Text>
+                    <Text style={[commonStyle.h3, {fontWeight:'bold', letterSpacing:2}]}>{`Rs.${totalAmount}/-`}</Text>
                     </View>
                    <View style={[styles.textArea]}>
                        <TextInput

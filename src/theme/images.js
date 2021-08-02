@@ -24,6 +24,9 @@ const GENDER = require('../../assets/gender.png');
 const PHONE = require('../../assets/phone.png');
 const ADDRESS1 = require('../../assets/address1.png');
 const EMPTY_CART = require('../../assets/icons8-empty-box-100.png')
+const GOOGLE_ICON = require('../../assets/icons8-google.png');
+const FACEBOOK_ICON = require('../../assets/icons8-facebook-f-100.png');
+
 
 
 
@@ -68,5 +71,7 @@ export {
     GENDER,
     ADDRESS1,
     PHONE,
-    EMPTY_CART
+    EMPTY_CART,
+    GOOGLE_ICON,
+    FACEBOOK_ICON
 }

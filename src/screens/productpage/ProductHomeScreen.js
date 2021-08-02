@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {View, Text, FlatList, } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, FlatList, ToastAndroid } from 'react-native';
 import Header from '../../components/header/index';
 import Item from '../../components/product/Item';
 import styles from './style';
@@ -20,9 +20,9 @@ const ProductHomeScreen = ({
   //   IncreaseQuantity(id);
   // }
 
-  // function addItemToCart(product) {
-  //   addToCart(product);
-  // }
+  function addItemToCart(product) {
+    addToCart(product);
+  }
   // function removeItemFromCart(product) {
   //   removeFromCart(product);
   // }
@@ -54,7 +54,7 @@ const ProductHomeScreen = ({
                 {...item}
                 // IncreaseCartQuantity={IncreaseCartQuantity}
                 // removeItemFromCart={removeItemFromCart}
-                // addItemToCart={addItemToCart}
+                addItemToCart={addItemToCart}
                 navigation={navigation}
               />
             )}

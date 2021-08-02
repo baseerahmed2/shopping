@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { View, Text, Image, TouchableOpacity, TouchableHighlight, ToastAndroid } from 'react-native'
-import {ARROW_FORWARD, MAIL, PASSWORD } from '../../theme/images';
+import {ARROW_FORWARD, FACEBOOK_ICON, GOOGLE_ICON, MAIL, PASSWORD } from '../../theme/images';
 import styles from './style'
 import NewInput from './../../components/input/NewInput';
 import Error from '../../components/bottomSheet/Error';
@@ -68,10 +68,10 @@ useEffect(() => {
                 <Text style={[style.heading, {fontSize:14, textAlign:'center',}]}>OR</Text>
                
                 <View style={{ marginTop:10}}>
-                <Button color={'#1877F2'} title={'Sign In With Facebook'} />
+                <Button socialIcon icon={FACEBOOK_ICON} color={'#1877F2'} title={'Sign In With Facebook'} />
                 </View>
                 <View style={{ marginTop:10}}>
-                <Button color={'#db4a39'} title={'Sign In With Google'} />
+                <Button socialIcon icon={GOOGLE_ICON} color={'#db4a39'} title={'Sign In With Google'} />
                 </View>
            
             </View>
