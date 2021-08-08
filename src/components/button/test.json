@@ -1,0 +1,12 @@
+{
+    "1": {
+        "img_url": "path_to_img/",
+        "name": "Jon Doe",
+        "list": {"date": "something", "start": "", "end": ""}
+    },
+    "2" : {
+        "img_url": "path_to_img-2/",
+        "name": "Bill",
+        "list": {}
+    }
+}

@@ -51,3 +51,28 @@ useEffect(() => {
 
 export default AddAddressScreen
 // 48ZV7uJSY-9J9pM0o6bskVnhTKKUY35HnuU1u-dO0Yw
+
+
+// market lat long, name
+
+// [
+// { 
+//     id:'sdfsdfd',
+//     storeName:'fruit store',
+//     lat:11212,
+//     long:3,433,
+//     description:'vegatble, ',
+//     image: 'image_url/logo',
+// }];
+
+
+// categories:{
+//     vegtable:{
+//         name:'',
+
+//     }
+// }
+
+
+
+// ocr ...  excel sheet 

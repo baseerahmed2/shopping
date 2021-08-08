@@ -84,7 +84,7 @@ useEffect(() => {
                
 
             </View>
-           <TouchableOpacity style={{borderWidth:0.3, padding:10, borderColor:'rgb(11,21,90)', opacity:0.7, marginTop:20, marginBottom:20, flexDirection:'row', justifyContent:'space-between', alignItems:'center', width:'45%'}}>
+           <TouchableOpacity onPress={()=>navigation.navigate('RiderApp')} style={{   borderWidth:0.3, padding:10, borderColor:'rgb(11,21,90)', opacity:0.7, marginTop:20, marginBottom:20, flexDirection:'row', justifyContent:'space-between', alignItems:'center', width:'45%'}}>
            <Text style={[style.regularText]}>Switch to captain</Text>
             <Image source={ARROW_FORWARD} style={{width:16, height:16}} />
            </TouchableOpacity>

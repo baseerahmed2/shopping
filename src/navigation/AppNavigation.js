@@ -22,6 +22,7 @@ import ChangePaymentScreen from './../screens/payment/ChangePaymentScreen';
 import FavouriteScreen from './../screens/favorite/index';
 import SearchShopScreen from './../screens/searchshop/SearchScreen';
 import AddAddressScreen from './../screens/addAddress/AddAddressScreen';
+import CaptainLogin from './../screens/rider/CaptainLogin';
 
 const HomeStack = createStackNavigator({
     Home:{screen: HomeScreen},
@@ -139,7 +140,8 @@ const MainStack = createStackNavigator({
 Auth: AuthStack,
 App:BottomTabs,
 Search: {screen: SearchScreen},
-AddAddress: {screen: AddAddressScreen}
+AddAddress: {screen: AddAddressScreen},
+RiderApp: CaptainLogin
 }, 
 {
     initialRouteName:'Auth',
